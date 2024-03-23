@@ -1,25 +1,19 @@
 import { createFrames, Button } from "frames.js/next";
- 
+
 const frames = createFrames();
 const handleRequest = frames(async (ctx) => {
   return {
-    image: (
-      <span>
-        {ctx.pressedButton
-          ? `I clicked ${ctx.searchParams.value}`
-          : `Click some button`}
-      </span>
-    ),
+    image: <div tw="bg-green-200 text-7xl font-black p-80">It's toss time</div>,
     buttons: [
-      <Button action="post" target={{ query: { value: "Yes" }}}>
-        Say Yes
+      <Button action="post">
+        Heads
       </Button>,
-      <Button action="post" target={{ query: { value: "No" }}}>
-        Say No
+      <Button action="post">
+        Tails
       </Button>,
     ],
   };
 });
- 
+
 export const GET = handleRequest;
 export const POST = handleRequest;
