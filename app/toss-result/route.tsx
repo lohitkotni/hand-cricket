@@ -4,6 +4,7 @@ const frames = createFrames();
 
 const handleRequest = frames(async (ctx) => {
   const randomNumber = Math.floor(Math.random() * 2) + 1;
+  const computerChoice = Math.floor(Math.random()*2)+1;
   let result, buttons;
 
   if (randomNumber === ctx.pressedButton?.index) {
@@ -17,7 +18,7 @@ const handleRequest = frames(async (ctx) => {
       </Button>,
     ];
   } else {
-    result = "You lost the toss";
+    result = `You lost the toss and computer chose to ${computerChoice ===2?"bat":"bowl"}`;
     buttons = [
       <Button action="post" target={{ query: { choice: "continue" } }}>
         Continue
@@ -26,7 +27,7 @@ const handleRequest = frames(async (ctx) => {
   }
 
   return {
-    image: <div>{result}</div>,
+    image: <div tw="bg-orange-600 p-80 text-7xl">{result}</div>,
     buttons: buttons,
   };
 });
