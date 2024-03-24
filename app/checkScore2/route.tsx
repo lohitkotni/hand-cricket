@@ -7,7 +7,7 @@ const handleRequest = frames(async (ctx)=>{;
 
     return {
         image: (
-            <div tw="flex flex-col">{computerScore} is your target.</div>
+            <div tw="flex flex-col">{computerScore+1} is your target.</div>
         ),
         buttons: [
             <Button action="post"
