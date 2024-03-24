@@ -30,7 +30,7 @@ const handleRequest = frames(async (ctx) => {
         action="post"
         target={{ query: { currentPlayer }, pathname : "/game" }}
       >
-        Let's play
+        Lets play
       </Button>,
     ],
   };

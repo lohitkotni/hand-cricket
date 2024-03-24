@@ -11,7 +11,7 @@ const handleRequest = frames(async (ctx) => {
     image: (
       <div tw="bg-green-400 w-screen h-screen flex justify-center items-center flex-col">
         <div tw="text-7xl mb-16">Hand Cricket</div>
-        <div>It's toss time</div>
+        <div>Toss time</div>
       </div>
     ),
     buttons: [
