@@ -13,6 +13,16 @@ const handleRequest = frames(async (ctx)=>{
         buttons: [
             <Button action="post"
             target={{query:{userScore},pathname:"/defend"}}>LFG</Button>
+        ],
+        accepts: [
+            {
+            id: "farcaster",
+            version: "vNext"
+            },
+            {
+              id:"xmtp",
+              version:"vNext"
+            }
         ]
     }
 })

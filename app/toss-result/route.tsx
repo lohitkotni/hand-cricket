@@ -53,6 +53,16 @@ const handleRequest = frames(async (ctx) => {
           >
             Continue
           </Button>,
+        ], 
+        accepts: [
+          {
+          id: "farcaster",
+          version: "vNext"
+          },
+          {
+            id:"xmtp",
+            version:"vNext"
+          }
         ]
       };
     }

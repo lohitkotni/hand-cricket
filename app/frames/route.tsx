@@ -28,6 +28,16 @@ const handleRequest = frames(async (ctx) => {
         Tails
       </Button>,
     ],
+    accepts: [
+      {
+      id: "farcaster",
+      version: "vNext"
+      },
+      {
+        id:"xmtp",
+        version:"vNext"
+      }
+    ]
   };
 });
 

@@ -32,7 +32,17 @@ const handleRequest = frames(async (ctx) => {
       >
         Lets play
       </Button>,
-    ],
+    ], 
+    accepts: [
+      {
+      id: "farcaster",
+      version: "vNext"
+      },
+      {
+        id:"xmtp",
+        version:"vNext"
+      }
+    ]
   };
 });
 

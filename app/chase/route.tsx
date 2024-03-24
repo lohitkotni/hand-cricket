@@ -71,8 +71,18 @@ const handleRequest = frames(async (ctx) => {
         target={{ query: { move: 6, userScore, computerScore }, pathname: "/chase" }}
       >
         6
-      </Button>,
+      </Button>
     ],
+    accepts: [
+      {
+      id: "farcaster",
+      version: "vNext"
+      },
+      {
+        id:"xmtp",
+        version:"vNext"
+      }
+    ]
   };
 });
 
