@@ -10,10 +10,10 @@ const handleRequest = frames(async (ctx) => {
   if (randomNumber === ctx.pressedButton?.index) {
     result = "You won the toss";
     buttons = [
-      <Button action="post" target={{ query: { choice: "batting" },pathname:"/game-setup" }}>
+      <Button action="post" target={{ query: { choice: "batting", userScore:0 },pathname:"/userBat" }}>
         Batting
       </Button>,
-      <Button action="post" target={{ query: { choice: "bowling" },pathname:"/game-setup"}}>
+      <Button action="post" target={{ query: { choice: "bowling" },pathname:"/userBowl"}}>
         Bowling
       </Button>,
     ];
@@ -25,7 +25,7 @@ const handleRequest = frames(async (ctx) => {
       buttons = [
         <Button
           action="post"
-          target={{ query: { choice: "continueBowl" }, pathname :"/game-setup" }}
+          target={{ query: { choice: "continueBowl" }, pathname :"/userBowl" }}
         >
           Continue
         </Button>,
@@ -34,7 +34,7 @@ const handleRequest = frames(async (ctx) => {
       buttons = [
         <Button
           action="post"
-          target={{ query: { choice: "continueBat" }, pathname:"/game-setup" }}
+          target={{ query: { choice: "continueBat", userScore:0 }, pathname:"/userBat" }}
         >
           Continue
         </Button>,

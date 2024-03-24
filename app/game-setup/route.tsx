@@ -6,7 +6,6 @@ const handleRequest = frames(async (ctx) => {
   let userScore = 0;
   let computerScore = 0;
   let currentPlayer = null;
-  
 
   if (ctx.searchParams.choice === "batting") {
     currentPlayer = "You";
@@ -25,9 +24,14 @@ const handleRequest = frames(async (ctx) => {
         <p>{currentPlayer} bat first</p>
       </div>
     ),
-    buttons:[
-        <Button action="post" target={{query:{currentPlayer}}}>Let's play</Button>
-    ]
+    buttons: [
+      <Button
+        action="post"
+        target={{ query: { currentPlayer }, pathname : "/game" }}
+      >
+        Let's play
+      </Button>,
+    ],
   };
 });
 
