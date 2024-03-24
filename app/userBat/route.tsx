@@ -20,7 +20,7 @@ const handleRequest = frames(async (ctx) => {
     userMove = Number(ctx.searchParams.move);
 
     if (userMove === computerMove) {
-      message = "Out! Your move and computer's move match.";
+      message = "You are out";
       gameOver = true;
     }else {
       userScore += userMove;
