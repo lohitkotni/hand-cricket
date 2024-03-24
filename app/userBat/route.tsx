@@ -11,26 +11,21 @@ const handleRequest = frames(async (ctx) => {
   let possibleMoves = [1, 2, 4, 6];
   let gameOver = false;
 
-  // Generate random computer move
+
   computerMove =
     possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
 
-  // Update user's move and score based on user input
+
   if (ctx.searchParams.move) {
     userMove = Number(ctx.searchParams.move);
-    userScore += userMove;
 
-    // Check if user's move is a valid cricket score (1, 2, 4, 6)
-    if (![1, 2, 4, 6].includes(userMove)) {
-      message = "Invalid move! Please select 1, 2, 4, or 6.";
-      userScore -= userMove; // Revert invalid move
-    }
-
-    // Check if user is out (userMove and computerMove are same)
     if (userMove === computerMove) {
       message = "Out! Your move and computer's move match.";
       gameOver = true;
+    }else {
+      userScore += userMove;
     }
+    
   }
   if (gameOver) {
     return {
@@ -54,7 +49,7 @@ const handleRequest = frames(async (ctx) => {
       <div tw="flex flex-col">
         <p>User move: {userMove}</p>
         <p>User score: {userScore}</p>
-        <p>{message}</p> {/* Display error message or out message */}
+        <p>{message}</p>
       </div>
     ),
     buttons: [

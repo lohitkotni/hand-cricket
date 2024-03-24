@@ -3,7 +3,7 @@ import { createFrames, Button } from "frames.js/next";
 const frames = createFrames();
 
 const handleRequest = frames(async (ctx) => {
-  let userScore = Number(ctx.searchParams.userScore || 0); // Initialize userScore from query params
+  let userScore = Number(ctx.searchParams.userScore || 0); 
   let message = "";
   let computerScore = Number(ctx.searchParams.computerScore || 0);
   let userMove = 0;
@@ -11,18 +11,16 @@ const handleRequest = frames(async (ctx) => {
   let possibleMoves = [1, 2, 4, 6];
   let gameOver = false;
 
-  // Generate random computer move if user has bowled (submitted a move)
+  
   if (ctx.searchParams.move) {
     computerMove = possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
     userMove = Number(ctx.searchParams.move);
 
-    // Update computer's score based on user's move
-    computerScore += computerMove;
-
-    // Check if user is out (userMove and computerMove are same)
     if (userMove === computerMove) {
       message = "Congratulations, computer is out!";
       gameOver = true;
+    } else {
+      computerScore += computerMove;
     }
   }
 
