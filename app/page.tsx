@@ -6,7 +6,7 @@ export async function generateMetadata() {
     title: "My Page",
     // provide a full URL to your /frames endpoint
     other: await fetchMetadata(
-      new URL("/frames", process.env.VERCEL_URL ? `https://{process.env.VERCEL_URL}` : "http://localhost:3000")
+      new URL("/frames", process.env.VERCEL_URL ? `https://hand-cricket-one.vercel.app` : "https://hand-cricket-one.vercel.app")
     ),
   };
 }
