@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { fetchMetadata } from "frames.js/next";
  
 export async function generateMetadata() {
