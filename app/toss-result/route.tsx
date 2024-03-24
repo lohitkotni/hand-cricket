@@ -3,14 +3,14 @@ import { createFrames, Button } from "frames.js/next";
 const frames = createFrames();
 
 const handleRequest = frames(async (ctx) => {
-  const randomNumber = Math.floor(Math.random() * 2)+1;
+  const randomNumber = Math.floor(Math.random() * 2) + 1;
   const computerChoice = Math.floor(Math.random() * 2);
   let result, buttons;
 
   if (randomNumber === ctx.pressedButton?.index) {
     result = "You won the toss";
     buttons = [
-      <Button action="post" target={{ query: {choice:"batting"} }}>
+      <Button action="post" target={{ query: { choice: "batting" } }}>
         Batting
       </Button>,
       <Button action="post" target={{ query: { choice: "bowling" } }}>
@@ -30,7 +30,7 @@ const handleRequest = frames(async (ctx) => {
 
   return {
     image: (
-      <div tw="bg-orange-800 w-screen h-screen flex justify-center items-center">
+      <div tw="bg-pink-200 w-screen h-screen flex justify-center items-center">
         {result}
       </div>
     ),
