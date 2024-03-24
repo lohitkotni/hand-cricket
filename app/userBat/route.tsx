@@ -30,7 +30,7 @@ const handleRequest = frames(async (ctx) => {
   if (gameOver) {
     return {
       image: (
-        <div tw="flex flex-col">
+        <div tw="flex flex-col bg-yellow-400 w-screen h-screen font-sans justify-center items-center">
           <p>{message}</p>
           
         </div>
@@ -46,7 +46,7 @@ const handleRequest = frames(async (ctx) => {
 
   return {
     image: (
-      <div tw="flex flex-col">
+      <div tw="flex flex-col bg-blue-400 w-screen h-screen font-sans justify-center items-center">
         <p>Your move: {userMove}</p>
         <p>Your score: {userScore}</p>
         <p>{message}</p>
