@@ -35,8 +35,8 @@ const handleRequest = frames(async (ctx) => {
       ),
       buttons: [
         <Button
-          action="link"
-          target={{ pathname: "/checkScore", query: { computerScore } }}
+          action="post"
+          target={{ pathname: "/checkScore2", query: { computerScore } }}
         >
           Check Computer Score
         </Button>
