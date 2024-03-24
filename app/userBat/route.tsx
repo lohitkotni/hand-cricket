@@ -47,8 +47,8 @@ const handleRequest = frames(async (ctx) => {
   return {
     image: (
       <div tw="flex flex-col">
-        <p>User move: {userMove}</p>
-        <p>User score: {userScore}</p>
+        <p>Your move: {userMove}</p>
+        <p>Your score: {userScore}</p>
         <p>{message}</p>
       </div>
     ),
