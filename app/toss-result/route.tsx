@@ -3,8 +3,8 @@ import { createFrames, Button } from "frames.js/next";
 const frames = createFrames();
 
 const handleRequest = frames(async (ctx) => {
-  const randomNumber = Math.floor(Math.random() * 2) + 1;
-  const computerChoice = Math.floor(Math.random() * 2) + 1;
+  const randomNumber = Math.floor(Math.random() * 2);
+  const computerChoice = Math.floor(Math.random() * 2);
   let result, buttons;
 
   if (randomNumber === ctx.pressedButton?.index) {
@@ -19,7 +19,7 @@ const handleRequest = frames(async (ctx) => {
     ];
   } else {
     result = `You lost the toss and computer chose to ${
-      computerChoice === 2 ? "bat" : "bowl"
+      computerChoice === 0 ? "bat" : "bowl"
     }`;
     buttons = [
       <Button action="post" target={{ query: { choice: "continue" } }}>
