@@ -1,6 +1,10 @@
 import { createFrames, Button } from "frames.js/next";
 
-const frames = createFrames();
+const frames = createFrames({
+  initialState: {
+    tossResult: "",
+  },
+});
 const handleRequest = frames(async (ctx) => {
   return {
     image: (
@@ -12,13 +16,13 @@ const handleRequest = frames(async (ctx) => {
     buttons: [
       <Button
         action="post"
-        target={{ query: { value: 1 }, pathname: "/toss-result" }}
+        target={{ query: { tossResult: "heads" }, pathname: "/toss-result" }}
       >
         Heads
       </Button>,
       <Button
         action="post"
-        target={{ query: { value: 2 }, pathname: "/toss-result" }}
+        target={{ query: { tossResult: "tails" }, pathname: "/toss-result" }}
       >
         Tails
       </Button>,
