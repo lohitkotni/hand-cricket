@@ -35,7 +35,6 @@ const handleRequest = frames(async (ctx) => {
       </div>
     ),
     buttons: buttons,
-    inputText: "type something",
   };
 });
 
